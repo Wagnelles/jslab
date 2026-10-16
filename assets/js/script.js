@@ -1,0 +1,1 @@
+console.log("JavaScript criado com sucesso!");
