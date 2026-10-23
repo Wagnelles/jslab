@@ -152,7 +152,7 @@ const possuiIngresso = true; //atenção no true minúsculo
 
 const podeEntrar = 
     idade3 >= 18 && possuiIngresso;
-consolelog(podeEntrar);
+console.log(podeEntrar);
 
 ///
 console.log("ESPAÇO");
@@ -165,3 +165,43 @@ const possuiAcesso =
     ehProfessor || ehAluno; // || representa OU
 
 console.log(possuiAcesso);
+
+// If else
+
+//const nota = 65;
+
+//if (nota >= 60)
+ //   {
+//   console.log("Aprovado");
+//}
+
+//else {
+//    console.log("Reprovado");
+//}
+
+//nessas horas que a gente percebe o tanto que 
+//Python deixa a gente mal acostumado
+
+//Else if
+
+const nota = 92;
+if (nota >=90) {
+    console.log("Excelente!");
+}   else if (nota>=75) {
+    console.log("Muito bom");
+}   else if (nota>=60) {
+    console.log("Aprovado");
+}   else {
+    console.log("Reprovado");
+}
+
+//condições compostas
+
+const nota2 = 70;
+const frequencia = 80;
+
+if(nota >= 60 && frequencia >= 75) { //nota E frequencia
+    console.log("Aluno aprovado");
+}   else {
+    console.log("Aluno não aprovado");
+}
