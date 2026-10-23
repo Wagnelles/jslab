@@ -205,3 +205,5 @@ if(nota >= 60 && frequencia >= 75) { //nota E frequencia
 }   else {
     console.log("Aluno não aprovado");
 }
+
+//CONTINUAÇÃO JS2
