@@ -205,3 +205,55 @@ if(nota >= 60 && frequencia >= 75) { //nota E frequencia
 }   else {
     console.log("Aluno não aprovado");
 }
+
+
+//28. Exercicio - pedido prioritário
+
+const prioridade = "alta";
+const atrasado = true;
+
+if (prioridade === "alta" && atrasado === true) {
+    console.log("ATENÇÃO IMEDIATA");
+} else {
+    console.log("Acompanhamento normal");
+}
+
+//29. Exercício - pedido prioritário
+
+let idade4 = 17;
+let possuiCadastro = true;
+let bloqueado = true;
+
+//Exemplo 1 = maior de idade "desbloqueia" acesso ao cadastro
+if (idade4 >= 18) {
+    bloqueado = false;
+    console.log(bloqueado);
+    console.log("Cadastro desbloqueado");
+} else {
+    bloqueado = true;
+    console.log(bloqueado);
+    console.log("Cadastro bloqueado. Acesso exclusivo a maiores de idade.")
+
+}
+
+//Exemplo 2 = Desbloqueio mediante ser maior de idade e possuir cadastro
+
+if (idade4 === 18 & possuiCadastro === true) {
+    bloqueado = false;
+    console.log(bloqueado);
+    console.log("Acesso concedido")
+} else if (idade4 >= 18 && possuiCadastro === false) {
+    bloqueado = true;
+    console.log("Você é maior de idade mas não tem cadastro. Cadastre-se.")
+
+} else if (idade4 < 18) {
+    bloqueado = true;
+    console.log(bloqueado);
+    console.log("Somente maiores de idade podem cadastrar.");
+} else {
+    console.log("Deus ajude")
+}
+
+console.log("Informação");
+console.warn("Atenção");
+console.error("Erro");
