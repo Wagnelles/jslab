@@ -254,6 +254,35 @@ if (idade4 === 18 & possuiCadastro === true) {
     console.log("Deus ajude")
 }
 
-console.log("Informação");
-console.warn("Atenção");
-console.error("Erro");
+console.log("Exemplo: Informação");
+console.warn("Exemplo: Atenção");
+console.error("Exemplo: Erro");
+
+//Desafio final
+
+
+const cliente = "Wagnelles"
+let valor2 = 300
+let valor2_original = 0
+const prioridade2 = true
+const atrasado2 = true
+let num_pedido = 1412
+
+//calcular desconto se o valor passar de um limite definido
+if (valor2 >= 300) {
+    valor2_original = valor2
+    valor2 = (valor2 * 0.75)
+    console.log(`Preço original = ${valor2_original}\nPreço com desconto = ${valor2}`)
+}
+
+//identificar prioridade
+if (prioridade2 === true){
+    console.log(`O pedido ${num_pedido} precisa de atenção imediata!!!`)
+}
+
+//utilização de Template literals
+
+const pedido2 =
+	`Número do pedido: ${num_pedido} | Preço final: ${valor2}`;
+
+console.log(pedido2);
