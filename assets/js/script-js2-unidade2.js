@@ -92,7 +92,7 @@ console.log("34, erro lógico, acompanhar com depuração")
 
 function calcularMedia(nota1,nota2,nota3) {
     const total = nota1+nota2+nota3
-    const media = total/2 //problema aqui - uima média é a divisão do total dos valores pela quantidade de valores separados
+    const media = total/3 //problema aqui - uima média é a divisão do total dos valores pela quantidade de valores separados
     return media
 }
 
