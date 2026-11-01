@@ -97,3 +97,84 @@ function calcularMedia(nota1,nota2,nota3) {
 }
 
 console.log(calcularMedia(70,80,90))
+
+//
+
+console.log("37, Desafio tabuada")
+
+function exibirTabuada(numero){
+    for (i = 1; i<=numero; i++) {
+        mensagem = `${numero} * ${i} = ${numero * i}`
+        console.log(mensagem)
+    }
+}
+
+exibirTabuada(10)
+
+//
+
+console.log("38, desafio faixa ed temperatura")
+
+function classTemp(temp){
+    let classificacao = ""
+    if (temp <=10) {
+        classificacao = "Muito frio"
+    } else if (temp > 10 && temp <=20){
+        classificacao = "Frio"
+    } else if (temp > 20 && temp <=25){
+        classificacao = "Agradável"
+    } else if (temp > 25 && temp <= 30){
+        classificacao = "Quente"
+    } else {
+        classificacao = "Muito quente"
+    }
+    return classificacao
+}
+
+valorClassificado = classTemp(31)
+console.log(`Definição da temperatura: ${valorClassificado}`)
+
+//
+
+console.log("39, desafio, processamento de pedidos")
+
+
+function calcularSubtotal(subtotal) {
+    calcularDesconto2(subtotal)
+
+}
+
+function calcularDesconto2(subtotal) {
+    let desconto = 0
+    if (subtotal >= 200) {
+        desconto = 15
+    } else if (subtotal >=100) {
+        desconto = 10
+    }
+    let valorDesconto = subtotal * (desconto / 100)
+    calcularTotal3(subtotal, valorDesconto)
+
+}
+
+function calcularTotal3(subtotal, valorDesconto) {
+    const valorFinal = subtotal - valorDesconto
+    let temDesconto = false
+    if (valorDesconto > 0){
+        temDesconto = true
+    }
+    classificarPedido(valorFinal, temDesconto, valorDesconto, subtotal)
+
+}
+
+function classificarPedido(vf, td, vd, st) {
+    if (td === false){
+        mensagem_final = `Seu pedido não teve desconto.\nValor final: ${vf}`
+    } else {
+        mensagem_final = `Subtotal: ${st}\nSeu pedido teve desconto de ${(vd/st) * 100}%.\nValor final: ${vf}`
+    }
+    console.log(mensagem_final)
+
+}
+
+const totalcarrinho = 100
+calcularSubtotal(totalcarrinho)
