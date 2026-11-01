@@ -73,3 +73,27 @@ function verificarSituacao(nota,frequencia){
 situacao = verificarSituacao(59,75)
 console.log(`Situação do aluno: ${situacao}`)
 
+//
+
+console.log("32, depuração com breakpoint")
+
+function calcularValorFinal(preco, quantidade, percentualDesconto2){
+    const subtotal = preco * quantidade
+    const desconto = subtotal / 100
+    const total = subtotal - desconto
+    return total
+}
+const resultado = calcularValorFinal(80,3,10)
+console.log(resultado)
+
+//
+
+console.log("34, erro lógico, acompanhar com depuração")
+
+function calcularMedia(nota1,nota2,nota3) {
+    const total = nota1+nota2+nota3
+    const media = total/2 //problema aqui - uima média é a divisão do total dos valores pela quantidade de valores separados
+    return media
+}
+
+console.log(calcularMedia(70,80,90))
