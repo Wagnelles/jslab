@@ -144,3 +144,135 @@ function pesquisarPedidos2(termo) {
 
 resultado2 = pesquisarPedidos2("aberto")
 console.log(resultado2)
+
+//
+
+console.log("38, ordenacao com sort()")
+
+pedidos.sort(
+    (a,b) => a.valor - b.valor
+)
+
+console.log(pedidos)
+
+//
+
+console.log("40, criando copia antes de ordenar")
+
+//spread syntax
+
+const pedidosOrdenados = [
+    ...pedidos
+]
+
+pedidosOrdenados.sort(
+    (a,b) => a.valor - b.valor
+)
+
+//
+
+console.log("43, ordenacao crescente e decrescente")
+
+console.log("43-1, ordenacao crescente")
+
+const valorcrescente = [...pedidos]
+valorcrescente.sort(
+    (a,b) => a.valor - b.valor
+)
+
+console.log(valorcrescente)
+
+console.log("43-2, ordenacao decrescente")
+
+const valordecrescente = [...pedidos]
+
+valordecrescente.sort(
+    (a,b) => b.valor - a.valor
+)
+
+console.log(valordecrescente)
+
+//
+
+console.log("43, ordenando textos")
+
+const porCliente = [...pedidos]
+
+porCliente.sort (
+    (a,b) => a.cliente.localeCompare(b.cliente)
+)
+
+console.log(porCliente)
+
+//
+
+console.log("44, exercicio funcoes de ordenacao")
+
+const copia1 = [...pedidos]
+
+copia1.sort (
+    (a,b) => a.valor - b.valor
+)
+
+console.log(copia1)
+
+const copia2 = [...pedidos]
+
+copia2.sort (
+    (a,b) => b.valor - a.valor
+)
+
+console.log(copia2)
+
+
+const copia3= [...pedidos]
+
+copia3.sort(
+    (a,b) => a.cliente.localeCompare(b.cliente)
+)
+
+console.log(copia3)
+
+//
+
+console.log("46, combinando operacoes")
+
+const resultado = pedidos
+        .filter(i => i.status === "aberto")
+        .filter(i => i.valor >= 500)
+
+//
+
+console.log("47, Exercicio de processamento (filtragem)")
+
+const listao = [
+    {
+        id: 0o1,
+        pedido: "Manutencao do Peugeot",
+        cliente: "Wagnelles",
+        valor: 5000
+    },
+
+    {
+        id: 0o2,
+        pedido: "Manutencao do March",
+        cliente: "Sograo",
+        valor: 500
+    },
+
+    {
+        id: 0o3,
+        pedido: "Manutencao Bicicleta",
+        cliente: "Wagnelles",
+        valor: 50
+    },
+
+    {
+        id: 0o5,
+        pedido: "Manutencao Notebook",
+        cliente: "Wagnelles",
+        valor: 500
+    }
+
+]
+
