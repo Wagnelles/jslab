@@ -70,3 +70,65 @@ lista.append(paragrafo)
 console.log("18, removendo paragrafos")
 
 paragrafo.remove()
+
+//
+
+console.log("20/21, segunda unidade, renderização, criando um card")
+
+const artigo =
+    document.createElement("article")
+
+const titulo3 =
+    document.createElement("h3")
+
+titulo3.textContent =
+    "Pedido PS-1042"
+
+artigo.append(titulo3)
+lista.append(artigo)
+
+console.log("22, função de renderização")
+
+function renderizarPedidos(ListaPedidos) {
+
+    if (ListaPedidos.length === 0) {
+        const mensagem = document.querySelector("#lista-pedidos")
+        document.createElement("h1")
+        mensagem.textContent = "A lista tá vazia irmão"
+    } else {
+
+    const lista =
+        document.querySelector(
+            "#lista-pedidos"
+        )
+    
+    lista.textContent = "" //esvazia a lista criada anteriormente
+
+    ListaPedidos.forEach(i => {
+
+        const artigo =
+                document.createElement("article")
+            
+        const titulo =
+                document.createElement("h3")
+
+        const dados = 
+                document.createElement("p")
+            
+        titulo.textContent =
+                `PS-${i.id}`
+        
+        dados.innerText =
+                `Cliente: ${i.cliente}
+                 Categoria: ${i.categoria}
+                 Prioridade: ${i.prioridade}
+                 Status: ${i.status}
+                 Valor: R$${i.valor}` //sinto muito
+            
+        artigo.append(titulo)
+        artigo.append(dados)
+        lista.append(artigo)
+    })}
+}
+
+renderizarPedidos(pedidos)
