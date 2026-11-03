@@ -119,8 +119,8 @@ function pesquisarPedidos(termo) {
     )
 }
 
-resultado = pesquisarPedidos("almeida")
-console.log(resultado)
+//resultado = pesquisarPedidos("almeida")
+//console.log(resultado)
 
 //
 
@@ -250,29 +250,95 @@ const listao = [
         id: 0o1,
         pedido: "Manutencao do Peugeot",
         cliente: "Wagnelles",
-        valor: 5000
+        valor: 5000,
+        prioridade: "alta"
     },
 
     {
         id: 0o2,
         pedido: "Manutencao do March",
         cliente: "Sograo",
-        valor: 500
+        valor: 500,
+        prioridade: "baixa"
     },
 
     {
         id: 0o3,
         pedido: "Manutencao Bicicleta",
         cliente: "Wagnelles",
-        valor: 50
+        valor: 50,
+        prioridade: "media"
     },
 
     {
         id: 0o5,
         pedido: "Manutencao Notebook",
         cliente: "Wagnelles",
-        valor: 500
+        valor: 500,
+        prioridade: "alta"
     }
 
 ]
+
+function exercicio47(prioridade, valorMinimo) {
+    const termoNormalizado = prioridade.toLowerCase()
+    const copiaListao1 = [...listao]
+
+    const searchprioridades = copiaListao1.filter(i =>
+        i.prioridade
+            .toLocaleLowerCase()
+            .includes(termoNormalizado)
+        &&
+        i.valor >= valorMinimo)
+
+    return searchprioridades
+}
+
+const resultado47 = exercicio47("alta",500)
+console.log(resultado47.sort(
+    (a,b) => a.valor - b.valor))
+
+//normaliza capitalização do termo recebido pela função
+//faz a copia do dicionario
+//no return, usamos o filter na copia do dicionario
+//sem esquecer de tambémnormalizar a capitalização dele, e incluir o termo que foi normalizado no início
+
+
+//
+
+console.log("48, separando dados de apresentação")
+
+//basicamente falando pra armazenar valores puros
+//e usar coisas como R$ apenas na apresentação,
+//ou seja, no console.log
+
+
+//
+
+console.log("49, introdução a intl (recursos para formataçao")
+
+const formatadorMoeda =
+    new Intl.NumberFormat(
+        "pt-BR",
+        {
+            style: "currency",
+            currency: "BRL"
+        }
+    )
+
+console.log(formatadorMoeda.format(850))
+
+//ah, é um jeito chique de formatar direto no console.log
+
+console.log("51, resumos formatados")
+
+listao.forEach(i => {
+    const valorFormatado = 
+        formatadorMoeda.format(
+            i.valor
+        )
+    console.log(`${i.cliente} - ${valorFormatado}`)
+})
+
+//daora
 
