@@ -132,3 +132,119 @@ function renderizarPedidos(ListaPedidos) {
 }
 
 renderizarPedidos(pedidos)
+
+
+console.log("30, eventos")
+
+//lida com ações em uma interface como
+//clique, digitação,, alteração de campo,envio de formulário, movimento do ponteiro do mouse
+//o JS pode responder a isso
+
+console.log("31, addEventListener()")
+
+const botao = 
+    document.querySelector("#botao-teste") //pelo visto eu preciso, ou é boa prática, criar uma const cujo valor é o queryselector. Selecionar antes de interagir.
+
+/* botao.addEventListener(
+    "click",
+    () => {
+        console.log("Botão clicado")
+    }
+) */
+
+console.log("32, o objeto event")
+
+botao.addEventListener(
+    "click",
+    () => {
+        console.log(event) //aponto como deprecated, não sei porque. funcionou anyway
+    }
+)
+
+console.log("33, Rleacionando interface e dados")
+
+//"Qual pedido correspnde ao botão clicado?"
+//acho que quer dizer "a que variável o botão que cliquei está ligada?"
+
+
+console.log("34, data-*")
+
+//O código em cima tá uma bagunça, então melhor criar um card novo do zero até pra treinar.
+
+
+//seleciona onde os cards vão entrar no index.html
+const lista2 = document.querySelector("#lista-novos-pedidos")
+const resumo2 = document.querySelector("#novo-resumo")
+
+
+//montar um único card
+function criarnovocard(lista_produtos_2) {
+    
+    const artigo = document.createElement("article") //cria a caixa principal do card
+
+//cria os elementos internos
+    
+    //titulo (ou nesse caso código do pedido)
+    const titulo = document.createElement("h3")
+    titulo.textContent = `Código ${lista_produtos_2.codigo}`
+
+    //produto em si
+    const produto = document.createElement("p")
+    produto.textContent = `Nome do produto: ${lista_produtos_2.nome}`
+
+    //preço
+    const preco = document.createElement("p")
+    preco.textContent = `Preço: R$ ${lista_produtos_2.preco}`
+
+    //o que mais for colocar, que aqui é o botão do 34 e 36
+    const botao = document.createElement("button")
+    botao.textContent = "Ver detalhes"
+    botao.dataset.id = lista_produtos_2.codigo
+    botao.dataset.acao = "detalhes"
+    
+    artigo.append(titulo, produto, preco, botao)
+
+    return artigo
+
+}
+
+function renderizarNovosPedidos(colecao) {
+    lista2.textContent = "" //limpa a div
+
+    resumo2.textContent = `${colecao.length} produtos encontrados`
+
+    colecao.forEach(i => {
+        const cardPronto = criarnovocard(i)
+        lista2.append(cardPronto)
+    })
+
+}
+
+renderizarNovosPedidos(lista_produtos_2)
+
+
+const ELlista = 
+document.querySelector("#lista-pedidos")
+
+ELlista.addEventListener(
+    "click",
+    event => {
+        console.log(event.target)
+    }
+)
+
+lista.addEventListener(
+    "click",
+    event => {
+        const botao =
+            event.target.closest(
+                "[data-acao]"
+            )
+        if (!botao) {
+            return
+        }
+        console.log(botao.dataset)
+    }
+)
+
+//Deus ajude
